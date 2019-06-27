@@ -4,6 +4,32 @@
     ViewData["Title"] = "List";
 }
 
-<h1>List</h1>
+<h1>Restaurants</h1>
 
-@Model.Message
+<form method="get">
+    <div class="input-group">
+        <div class="input-group-append mb-1">
+          <span class="input-group-text" >Search</span>
+        </div>
+        <input type="text" class="form-control" name="searchTerm" asp-for="SearchTerm">
+    </div>
+    <button type="submit" class="btn btn-sm btn-outline-primary">Search</button>
+</form>
+
+<hr>
+
+<table class="table">
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>@restaurant.Name</td>
+            <td>@restaurant.Location</td>
+            <td>@restaurant.Cuisine</td>
+            <td>
+                <a asp-page="./Detail" asp-route class="btn btn-outline-primary btn-sm">More Details</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<div>@Model.Message</div>
