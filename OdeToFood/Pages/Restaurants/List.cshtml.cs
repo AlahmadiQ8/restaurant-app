@@ -15,7 +15,6 @@ namespace OdeToFood.Pages.Restaurants
         public string Message { get; set; }
         private readonly IConfiguration config;
         private readonly IRestaurantData restaurantData;
-
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
