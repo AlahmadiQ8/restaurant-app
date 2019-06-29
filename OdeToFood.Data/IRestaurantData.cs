@@ -5,9 +5,9 @@ using OdeToFood.Core;
 
 namespace OdeToFood.Data
 {
-    public interface IRestaurantData
+    public interface 
+        IRestaurantData
     {
-        IEnumerable<Restaurant> GetAll();
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
     }
 
@@ -24,12 +24,6 @@ namespace OdeToFood.Data
             };
         }
 
-        public IEnumerable<Restaurant> GetAll()
-        {
-            return from r in restaurants
-                   orderby r.Name
-                   select r;
-        }
 
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
