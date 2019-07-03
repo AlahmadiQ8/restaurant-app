@@ -26,10 +26,21 @@
             <td>@restaurant.Location</td>
             <td>@restaurant.Cuisine</td>
             <td>
-                <a asp-page="./Detail" asp-route-restaurantId="@restaurant.Id" class="btn btn-outline-primary btn-sm">More Details</a>
+                <a asp-page="./Detail"
+                   asp-route-restaurantId="@restaurant.Id"
+                   class="btn btn-outline-primary btn-sm">
+                    More Details
+                </a>
+                <a asp-page="./Edit"
+                   asp-route-restaurantId="@restaurant.Id"
+                   class="btn btn-outline-primary btn-sm">
+                    Edit
+                </a>
             </td>
         </tr>
     }
 </table>
+
+<a asp-page="./Edit" class="btn btn-primary">Add New Restaurant</a>
 
 <div>@Model.Message</div>
