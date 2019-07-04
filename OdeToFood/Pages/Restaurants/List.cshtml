@@ -6,10 +6,15 @@
 
 <h1>Restaurants</h1>
 
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
 <form method="get">
     <div class="input-group">
         <div class="input-group-append mb-1">
-          <span class="input-group-text" >Search</span>
+            <span class="input-group-text">Search</span>
         </div>
         <input type="text" class="form-control" name="searchTerm" asp-for="SearchTerm">
     </div>
@@ -36,6 +41,11 @@
                    class="btn btn-outline-primary btn-sm">
                     Edit
                 </a>
+                <a asp-page="./Delete"
+                   asp-route-restaurantId="@restaurant.Id"
+                   class="btn btn-outline-primary btn-sm">
+                    Delete
+                </a>
             </td>
         </tr>
     }
@@ -43,4 +53,6 @@
 
 <a asp-page="./Edit" class="btn btn-primary">Add New Restaurant</a>
 
-<div>@Model.Message</div>
+@section footer {
+    <div>OMG OMG OMG</div>
+}

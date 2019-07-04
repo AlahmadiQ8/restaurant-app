@@ -51,7 +51,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - OdeToFood - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            @RenderSection("footer", required: false)
+            <p>&copy; 2019 - OdeToFood - <a asp-area="" asp-page="/Privacy">Privacy</a></p>
         </div>
     </footer>
 
